@@ -1,3 +1,23 @@
+"scripts": {
+    ...
+    "lint-fix": "next lint --fix"
+}
+
+$ yarn add eslint-plugin-simple-import-sort -D
+
+# add the following in VSCode's settings.json:
+"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+},
+"eslint.validate": [
+"javascript",
+"javascriptreact",
+"typescript",
+"typescriptreact"
+],
+
+##### update eslint.config.mjs
+
 import { FlatCompat } from "@eslint/eslintrc";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import { dirname } from "path";
@@ -29,3 +49,5 @@ const eslintConfig = [
 ];
 
 export default eslintConfig;
+#####
+
