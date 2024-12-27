@@ -26,6 +26,12 @@ const eslintConfig = [
       "simple-import-sort/exports": "error",
     },
   },
+  {
+    ignores: [
+      "node_modules/",
+      ".next/",
+    ],
+  }
 ];
 
 export default eslintConfig;
