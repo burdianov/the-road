@@ -1,7 +1,8 @@
-type TicketPageProps = {
+interface TicketPageProps {
   params: { ticketId: string };
-};
+}
 
-export default function TicketPage({ params }: TicketPageProps) {
-  return <h2 className="text-lg">Ticket Page {params.ticketId}</h2>;
+export default async function TicketPage({ params }: TicketPageProps) {
+  const { ticketId } = await params;
+  return <h2 className="text-lg">Ticket Page {ticketId}</h2>;
 }
