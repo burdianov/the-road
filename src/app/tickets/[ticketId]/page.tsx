@@ -1,8 +1,10 @@
+import { use } from "react";
+
 interface TicketPageProps {
-  params: { ticketId: string };
+  params: Promise<{ ticketId: string }>;
 }
 
-export default async function TicketPage({ params }: TicketPageProps) {
-  const { ticketId } = await params;
+export default function TicketPage({ params }: TicketPageProps) {
+  const { ticketId } = use(params);
   return <h2 className="text-lg">Ticket Page {ticketId}</h2>;
 }
