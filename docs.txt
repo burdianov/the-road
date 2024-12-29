@@ -58,3 +58,9 @@ export default eslintConfig;
 
 #####
 
+# add typescript checking script in package.json
+
+"scripts" {
+  ...
+  "type": "tsc --noEmit"
+}
