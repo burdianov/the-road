@@ -1,14 +1,16 @@
+import { DocumentIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, PencilIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Link from "next/link";
 
 import { initialTickets } from "@/data";
 import { ticketPath } from "@/paths";
 
-// const TICKET_ICONS = {
-//   OPEN: "O",
-//   IN_PROGRESS: ">",
-//   DONE: "X",
-// };
+const TICKET_ICONS = {
+  OPEN: <DocumentIcon className="size-6" />,
+  IN_PROGRESS: <PencilIcon className="size-6" />,
+  DONE: <CheckIcon className="size-6" />,
+};
 
 export default function TicketsPage() {
   return (
@@ -26,6 +28,7 @@ export default function TicketsPage() {
             key={ticket.id}
             className="w-full max-w-[420px] p-4 border border-slate-100 rounded"
           >
+            <div>{TICKET_ICONS[ticket.status]}</div>
             <h3 className="text-lg font-semibold truncate">{ticket.title}</h3>
             <p
               className={clsx("text-sm text-slate-500 truncate", {
