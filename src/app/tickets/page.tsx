@@ -1,5 +1,4 @@
-import { DocumentIcon } from "@heroicons/react/24/outline";
-import { CheckIcon, PencilIcon } from "@heroicons/react/24/solid";
+import { CircleCheck, FileText, Pencil } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -14,9 +13,9 @@ import { initialTickets } from "@/data";
 import { ticketPath } from "@/paths";
 
 const TICKET_ICONS = {
-  OPEN: <DocumentIcon className="size-6" />,
-  IN_PROGRESS: <PencilIcon className="size-6" />,
-  DONE: <CheckIcon className="size-6" />,
+  OPEN: <FileText />,
+  IN_PROGRESS: <Pencil />,
+  DONE: <CircleCheck />,
 };
 
 export default function TicketsPage() {
