@@ -1,12 +1,10 @@
 import { DocumentIcon } from "@heroicons/react/24/outline";
 import { CheckIcon, PencilIcon } from "@heroicons/react/24/solid";
-import clsx from "clsx";
 import Link from "next/link";
 
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
