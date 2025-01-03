@@ -12,9 +12,7 @@ interface TicketPageProps {
 
 export default function TicketPage({ params }: TicketPageProps) {
   const { ticketId } = use(params);
-  const ticket = initialTickets.find(
-    (ticket) => ticket.id === Number(ticketId)
-  );
+  const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
 
   if (!ticket) {
     return (
