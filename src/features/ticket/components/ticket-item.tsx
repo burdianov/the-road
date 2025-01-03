@@ -18,9 +18,9 @@ interface TicketItemProps {
 
 export default function TicketItem({ ticket }: TicketItemProps) {
   return (
-    <Card className="w-full max-w-[420px]">
+    <Card className="w-full">
       <CardHeader>
-        <CardTitle className="flex items-center gap-x-2">
+        <CardTitle className="flex items-center gap-x-4">
           <span>{TICKET_ICONS[ticket.status]}</span>
           <span className="truncate">{ticket.title}</span>
         </CardTitle>
