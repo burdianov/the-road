@@ -1,6 +1,7 @@
 import { Kanban } from "lucide-react";
 import Link from "next/link";
 
+import { ThemeSwitch } from "../theme/theme-switch";
 import { Button } from "../ui/button";
 
 import { buttonVariants } from "@/components/ui/button";
@@ -17,7 +18,8 @@ export default function Header() {
           </Link>
         </Button>
       </div>
-      <div>
+      <div className="flex space-x-2 align-center">
+        <ThemeSwitch />
         <Link
           href={ticketsPath()}
           className={buttonVariants({ variant: "default" })}
