@@ -4,6 +4,7 @@ import { use } from "react";
 import Placeholder from "@/components/custom/placeholder";
 import { Button } from "@/components/ui/button";
 import { initialTickets } from "@/data";
+import TicketItem from "@/features/ticket/components/ticket-item";
 import { ticketsPath } from "@/paths";
 
 interface TicketPageProps {
@@ -28,9 +29,8 @@ export default function TicketPage({ params }: TicketPageProps) {
   }
 
   return (
-    <div>
-      <h2 className="text-lg">{ticket.title}</h2>
-      <p className="text-sm">{ticket.content}</p>
+    <div className="flex w-full justify-center mx-auto animate-fade-in-from-top max-w-[420px]">
+      <TicketItem ticket={ticket} isDetail />
     </div>
   );
 }
