@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 
 import Heading from "@/components/custom/heading";
+import Spinner from "@/components/custom/spinner";
 import TicketList from "@/features/ticket/components/ticket-list";
 
 export default function TicketsPage() {
@@ -11,7 +12,7 @@ export default function TicketsPage() {
         description="All your tickets at one place"
       />
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Spinner />}>
         <TicketList />
       </Suspense>
     </div>
