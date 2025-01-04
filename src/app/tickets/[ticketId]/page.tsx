@@ -1,19 +1,17 @@
 import Link from "next/link";
-import { use } from "react";
 
 import Placeholder from "@/components/custom/placeholder";
 import { Button } from "@/components/ui/button";
-import { initialTickets } from "@/data";
 import TicketItem from "@/features/ticket/components/ticket-item";
+import { getTicket } from "@/features/ticket/queries/get-ticket";
 import { ticketsPath } from "@/paths";
 
 interface TicketPageProps {
   params: Promise<{ ticketId: string }>;
 }
 
-export default function TicketPage({ params }: TicketPageProps) {
-  const { ticketId } = use(params);
-  const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
+export default async function TicketPage({ params }: TicketPageProps) {
+  const ticket = await getTicket((await params).ticketId);
 
   if (!ticket) {
     return (

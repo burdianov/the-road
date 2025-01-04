@@ -1,10 +1,9 @@
+import { Suspense } from "react";
+
 import Heading from "@/components/custom/heading";
-import TicketItem from "@/features/ticket/components/ticket-item";
-import { getTickets } from "@/features/ticket/queries/get-tickets";
+import TicketList from "@/features/ticket/components/ticket-list";
 
-export default async function TicketsPage() {
-  const tickets = await getTickets();
-
+export default function TicketsPage() {
   return (
     <div className="flex-1 flex flex-col gap-y-8">
       <Heading
@@ -12,11 +11,9 @@ export default async function TicketsPage() {
         description="All your tickets at one place"
       />
 
-      <div className="w-full mx-auto flex-1 flex flex-col items-center gap-y-4 animate-fade-in-from-top">
-        {tickets.map((ticket) => (
-          <TicketItem key={ticket.id} ticket={ticket} />
-        ))}
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <TicketList />
+      </Suspense>
     </div>
   );
 }
