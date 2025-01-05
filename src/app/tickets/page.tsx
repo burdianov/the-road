@@ -1,6 +1,8 @@
 import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 import Heading from "@/components/custom/heading";
+import Placeholder from "@/components/custom/placeholder";
 import Spinner from "@/components/custom/spinner";
 import TicketList from "@/features/ticket/components/ticket-list";
 
@@ -12,9 +14,11 @@ export default function TicketsPage() {
         description="All your tickets at one place"
       />
 
+      {/* <ErrorBoundary fallback={<Placeholder label="Something went wrong" />}> */}
       <Suspense fallback={<Spinner />}>
         <TicketList />
       </Suspense>
+      {/* </ErrorBoundary> */}
     </div>
   );
 }
