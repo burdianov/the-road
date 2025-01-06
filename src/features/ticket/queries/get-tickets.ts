@@ -7,6 +7,8 @@ export const getTickets = async (): Promise<Ticket[]> => {
     setTimeout(resolve, 1000);
   });
 
+  // console.log(process.env.DATABASE_URL);
+
   return new Promise((resolve) => {
     resolve(initialTickets);
   });
