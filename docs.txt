@@ -64,3 +64,15 @@ export default eslintConfig;
   ...
   "type": "tsc --noEmit"
 }
+
+# add to package.json "scripts"
+   "postinstall": "prisma generate"
+
+# add to schema.prisma under datasource db
+
+  directUrl = env("DIRECT_URL")
+
+# run the following command after updating the schema
+$ npx prisma db push
+
+https://supabase.com/dashboard/project/zouhelxplspcczcoqtoo/database/tables
