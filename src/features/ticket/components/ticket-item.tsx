@@ -17,7 +17,7 @@ interface TicketItemProps {
 export default function TicketItem({ ticket, isDetail }: TicketItemProps) {
   const detailButton = (
     <Button asChild variant="outline" size="icon">
-      <Link href={ticketPath(Number(ticket.id))}>
+      <Link href={ticketPath(ticket.id)}>
         <SquareArrowOutUpRight className="h-4 w-4" />
       </Link>
     </Button>
