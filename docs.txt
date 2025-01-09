@@ -76,3 +76,5 @@ export default eslintConfig;
 $ npx prisma db push
 
 https://supabase.com/dashboard/project/zouhelxplspcczcoqtoo/database/tables
+
+$ npx prisma studio
