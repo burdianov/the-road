@@ -78,3 +78,6 @@ $ npx prisma db push
 https://supabase.com/dashboard/project/zouhelxplspcczcoqtoo/database/tables
 
 $ npx prisma studio
+
+# check the types
+$ yarn type
